@@ -1,13 +1,29 @@
-# Python
-**/venv/
-__pycache__/
+
+venv/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
 *.sqlite3
+db.sqlite3
 .env
+.env.local
+.env.*.local
 
-# Node
+
+media/
+
+
 **/node_modules/
-dist/
-build/
+**/dist/
+**/build/
+*.log
 
-# OS
+
+.vscode/
+.idea/
+*.swp
+
+
 .DS_Store
+Thumbs.db
