@@ -4,17 +4,17 @@ import axios from "axios";
 const API = "http://127.0.0.1:8000/api";
 
 export default function ChatPage() {
-  const [conv, setConv] = useState(null);      // { id, status, messages, ... }
+  const [conv, setConv] = useState(null);      
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
   const scrollerRef = useRef(null);
 
-  // start a fresh conversation once
+  
   useEffect(() => {
     startNew();
   }, []);
 
-  // keep the view scrolled to latest message
+  
   useEffect(() => {
     scrollerRef.current?.scrollTo({
       top: scrollerRef.current.scrollHeight,
@@ -49,7 +49,7 @@ export default function ChatPage() {
         { role: "user", content }
       );
 
-      // append both user + assistant messages if present
+      
       setConv((prev) => ({
         ...prev,
         messages: [
@@ -71,7 +71,7 @@ export default function ChatPage() {
     setBusy(true);
     try {
       const { data } = await axios.post(`${API}/conversations/${conv.id}/end/`);
-      setConv(data); // now includes summary + tags
+      setConv(data); 
     } catch (err) {
       console.error(err);
       alert("Couldn't end conversation.");

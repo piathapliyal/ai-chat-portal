@@ -78,15 +78,15 @@ npm run dev
 Open: http://127.0.0.1:5173/
 
 
+### AI Model Used
+Currently, the system uses **Google Gemini API** for:
+- Real-time chat response generation
+- Conversation summarization
+- Conversation insights
 
-🤖 AI Setup (Local)
-Use LM Studio to avoid rate limits and work offline.
-Install LM Studio → download an instruct model (e.g., qwen3-8b or Mistral-7B-Instruct).
-Start Server in LM Studio (default: http://127.0.0.1:1234).
-Configure backend env (optional .env):
-
-LMSTUDIO_BASE=http://127.0.0.1:1234
-LMSTUDIO_MODEL=Mistral-7B-Instruct   # or qwen3-8b, match the exact server tab name
+### Local Model (LM Studio) Support (Planned)
+The backend has been structured to allow easy switching to a **local LLM**.
+Due to time constraints, the LM Studio integration will be added after submission.
 
 
 🧩 Core Endpoints
@@ -106,6 +106,17 @@ Chat — Real-time chat with LLM, start/end conversation.
 Conversations — List all chats (search by title/summary), open details.
 Intelligence — Ask questions about past chats; shows relevant excerpts.
 
+
+## Screenshots
+
+### Chat Interface
+![Chat Page](screenshots/chat.png)
+
+### Conversation Details
+![Conversation Detail](screenshots/detail.png)
+
+### Conversation Intelligence Search
+![Intelligence Page](screenshots/intel.png)
 
 
 ⚠️ Common Issues

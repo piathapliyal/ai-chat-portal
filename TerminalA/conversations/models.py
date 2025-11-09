@@ -8,10 +8,10 @@ class Conversation(models.Model):
     title = models.CharField(max_length=160, blank=True)
     started_at = models.DateTimeField(auto_now_add=True)
     ended_at = models.DateTimeField(null=True, blank=True)
-    status = models.CharField(max_length=16, default="active")  # active | ended
+    status = models.CharField(max_length=16, default="active")  
     summary = models.TextField(blank=True)
-    tags = models.JSONField(default=list, blank=True)           # ["travel", "budget"]
-    meta = models.JSONField(default=dict, blank=True)           # freeform extra info
+    tags = models.JSONField(default=list, blank=True)          
+    meta = models.JSONField(default=dict, blank=True)          
 
     def __str__(self) -> str:
         return f"{self.id} • {self.title or 'Untitled'}"

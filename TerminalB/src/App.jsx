@@ -2,16 +2,9 @@ import { BrowserRouter, Routes, Route, Navigate, Link } from "react-router-dom";
 import ChatPage from "./pages/ChatPage"; // your existing chat page
 import ConversationsPage from "./pages/ConversationsPage";
 import ConversationDetailPage from "./pages/ConversationDetailPage";
+import IntelligencePage from "./pages/IntelligencePage"
 
-// stub; you can replace later
-function IntelligencePage() {
-  return (
-    <div className="mx-auto max-w-3xl">
-      <h1 className="text-xl font-semibold">Conversation Intelligence</h1>
-      <p className="text-sm text-gray-600 mt-2">Coming soon.</p>
-    </div>
-  );
-}
+
 
 export default function App() {
   return (

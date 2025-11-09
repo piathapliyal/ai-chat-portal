@@ -1,9 +1,3 @@
-"""
-Django settings — kept simple and readable.
-- REST + OpenAPI docs
-- CORS open for local dev
-- Postgres via .env
-"""
 
 import os
 from pathlib import Path
@@ -13,29 +7,29 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Basic app config
+
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret")
 DEBUG = os.getenv("DEBUG", "1") == "1"
 ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
-    # Django basics
+    
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Third-party
+  
     "rest_framework",
     "drf_spectacular",
     "corsheaders",
-    # Our app
+   
     "conversations",
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",  # allow frontend to call API
+    "corsheaders.middleware.CorsMiddleware",  
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -45,7 +39,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True  # fine for assignment/demo
+CORS_ALLOW_ALL_ORIGINS = True  
 
 ROOT_URLCONF = "backend.urls"
 
@@ -67,7 +61,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "backend.wsgi.application"
 
-# ---- Database (PostgreSQL) ----
+
 USE_SQLITE_FOR_DEV = True
 
 if USE_SQLITE_FOR_DEV:
@@ -84,7 +78,7 @@ else:
   }
     }
 
-# Regional preferences
+
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "Asia/Kolkata"
 USE_I18N = True
@@ -93,6 +87,6 @@ USE_TZ = True
 STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# REST + OpenAPI docs config
+
 REST_FRAMEWORK = {"DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema"}
 SPECTACULAR_SETTINGS = {"TITLE": "AI Chat Portal API", "VERSION": "1.0.0"}

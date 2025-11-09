@@ -17,7 +17,7 @@ from .serializers import (
     QuerySerializer,
 )
 
-# Add output serializers for query results
+
 from rest_framework import serializers
 
 
@@ -34,7 +34,7 @@ class QueryOutSerializer(serializers.Serializer):
     excerpts = QueryMatchOutSerializer(many=True)
 
 
-# AI + semantic search (optional local LLM)
+
 from .ai import summarize_and_tag, gemini_chat
 from .services import messages_to_llm_format
 
@@ -123,9 +123,7 @@ class ConversationViewSet(viewsets.ModelViewSet):
         return Response(ConversationDetailSerializer(conv).data, status=200)
 
 
-# -----------------------------------------------------------
-# Conversation Intelligence Query (Simple Keyword Search)
-# -----------------------------------------------------------
+
 
 def _score(text, terms):
     t = (text or "").lower()

@@ -1,4 +1,4 @@
-// tiny API helper — keeps URLs tidy and Django happy with trailing slashes
+
 const API = (import.meta.env.VITE_API_BASE || "http://127.0.0.1:8000/api").replace(/\/+$/, "");
 
 const withSlash = (path) => {
